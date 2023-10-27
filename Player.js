@@ -71,6 +71,7 @@ class Player {
         bet(game.minimumRaise());
         return;
       }
+      bet(game.minimumRaise());
     } catch (error) {
       console.error(error);
     }
