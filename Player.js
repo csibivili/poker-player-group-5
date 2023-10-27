@@ -6,6 +6,7 @@ class Player {
   }
 
   static betRequest(gameState, bet) {
+    console.log("orban viktor is king");
     try {
       var game = new GameState(gameState);
       const scoreNumber = game.me().score();
@@ -54,8 +55,10 @@ class Player {
         (hasPocketPair && hasFigureCard) ||
         (hasFigureCard && hasPairWithCommCards)
       ) {
-        bet(me.stack());
-        return;
+        if (stackValue > minimumRaise * 3) {
+          bet(minimumRaise * 3);
+          return;
+        }
       } else if (
         (hasPairWithCommCards || hasFigureCard) &&
         stackValue > minimumRaise * 2
