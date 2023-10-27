@@ -20,17 +20,22 @@ class Player {
       console.log("STACK_VALUE", stackValue);
       console.log("HAS_POCKET_PAIR", hasPocketPair);
 
-      /*  // fold
-      if (!hasPocketPair && scoreNumber === 0) {
+      // fold
+      if (!hasPocketPair && scoreNumber < 5) {
+        console.log("HAS_POCKET_PAIR", hasPocketPair);
+        console.log("SCORE_NUMBER", scoreNumber);
         bet(0);
-      } */
+      }
 
       // raise on good cards
-      if (scoreNumber > 3 && stackValue > minimumRaise * 2 && !hasPocketPair) {
+      if (scoreNumber >= 10 && stackValue > minimumRaise * 2) {
+        console.log("SCORE_NUMBER", scoreNumber);
+        console.log("STACK_VALUE", stackValue);
         bet(minimumRaise * 2);
       } else {
         bet(game.minimumRaise());
       }
+
       console.log("END_OF_TRY");
     } catch (error) {
       console.error(error);
