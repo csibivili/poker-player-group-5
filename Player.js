@@ -6,8 +6,13 @@ class Player {
   }
 
   static betRequest(gameState, bet) {
-    var game = new GameState(gameState);
-    bet(0);
+    try {
+      var game = new GameState(gameState);
+      bet(game.minimumRaise());
+    } catch (error) {
+      console.log(error)
+      bet(0)
+    }
   }
 
   static showdown(gameState) {
