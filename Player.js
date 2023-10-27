@@ -20,13 +20,14 @@ class Player {
       console.log("STACK_VALUE", stackValue);
       console.log("HAS_POCKET_PAIR", hasPocketPair);
 
+      /*  // fold
+      if (!hasPocketPair && scoreNumber === 0) {
+        bet(0);
+      } */
+
       // raise on good cards
-      if (
-        scoreNumber > 3 &&
-        stackValue > minimumRaise * 1.5 &&
-        !hasPocketPair
-      ) {
-        bet(minimumRaise * 1.5);
+      if (scoreNumber > 3 && stackValue > minimumRaise * 2 && !hasPocketPair) {
+        bet(minimumRaise * 2);
       } else {
         bet(game.minimumRaise());
       }
