@@ -55,8 +55,8 @@ class Player {
         (hasPocketPair && hasFigureCard) ||
         (hasFigureCard && hasPairWithCommCards)
       ) {
-        if (stackValue > minimumRaise * 3) {
-          bet(minimumRaise * 3);
+        if (stackValue > minimumRaise * 100) {
+          bet(minimumRaise * 100);
           return;
         }
       } else if (
@@ -73,6 +73,7 @@ class Player {
       }
       bet(game.minimumRaise());
     } catch (error) {
+      bet(minimumRaise);
       console.error(error);
     }
   }
