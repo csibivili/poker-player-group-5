@@ -13,7 +13,8 @@ class Player {
       const stackValue = me.stack();
       const minimumRaise = game.minimumRaise();
 
-      if (scoreNumber > 10 && stackValue > minimumRaise * 1.5) {
+      // raise on good cards
+      if (scoreNumber > 3 && stackValue > minimumRaise * 1.5) {
         bet(minimumRaise * 1.5);
       }
 
