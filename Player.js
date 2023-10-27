@@ -21,10 +21,11 @@ class Player {
       console.log("HAS_POCKET_PAIR", hasPocketPair);
 
       // fold
-      if (!hasPocketPair && scoreNumber < 5) {
+      if (!hasPocketPair && scoreNumber < 7) {
         console.log("HAS_POCKET_PAIR", hasPocketPair);
         console.log("SCORE_NUMBER", scoreNumber);
         bet(0);
+        return;
       }
 
       // raise on good cards
@@ -32,11 +33,11 @@ class Player {
         console.log("SCORE_NUMBER", scoreNumber);
         console.log("STACK_VALUE", stackValue);
         bet(minimumRaise * 2);
+        return;
       } else {
         bet(game.minimumRaise());
+        return;
       }
-
-      console.log("END_OF_TRY");
     } catch (error) {
       console.error(error);
     }
