@@ -12,6 +12,11 @@ class Player {
       const me = game.me();
       const stackValue = me.stack();
       const minimumRaise = game.minimumRaise();
+      const hasPocketPair = me.hasPocketPair();
+
+      console.log("MINIMUM_RAISE", minimumRaise);
+      console.log("STACK_VALUE", stackValue);
+      console.log("HAS_POCKET_PAIR", hasPocketPair);
 
       // raise on good cards
       if (scoreNumber > 3 && stackValue > minimumRaise * 1.5) {
