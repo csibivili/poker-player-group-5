@@ -21,7 +21,7 @@ class Player {
       console.log("HAS_POCKET_PAIR", hasPocketPair);
 
       // fold
-      if (!hasPocketPair && scoreNumber < 7) {
+      if (!hasPocketPair && scoreNumber < 5) {
         console.log("HAS_POCKET_PAIR", hasPocketPair);
         console.log("SCORE_NUMBER", scoreNumber);
         bet(0);
